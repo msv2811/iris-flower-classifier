@@ -30,7 +30,7 @@ st.subheader(f"🌼 Predicted Species: {predicted_species.capitalize()}")
 
 # Fetch online image (Unsplash API)
 query = f"iris {predicted_species} flower"
-ACCESS_KEY = "8IkezrDDFguYaRdnVtxq4S_-aMnpzQF0oAp7Q0hPtXg"  # Replace with your real Unsplash API key
+ACCESS_KEY = st.secrets["UNSPLASH_KEY"]  # Replace with your real Unsplash API key
 
 url = f"https://api.unsplash.com/photos/random?query={query}&client_id={ACCESS_KEY}&orientation=squarish"
 response = requests.get(url)
